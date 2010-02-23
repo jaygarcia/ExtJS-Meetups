@@ -1,7 +1,7 @@
 Ext.ns("Meetup.form");
 
 Meetup.form.MemberRegistrationForm = Ext.extend(Meetup.form.RegistrationFormBaseCls, {
-    labelWidth : 80,
+    labelWidth : 75,
     defaults   : {
         anchor  : '-10'    
     },
@@ -9,49 +9,44 @@ Meetup.form.MemberRegistrationForm = Ext.extend(Meetup.form.RegistrationFormBase
 
         this.items = [
             {
-                    xtype      : 'textfield',
-                    fieldLabel : 'Location',
-                    name       : 'location'
+                fieldLabel : 'Location',
+                name       : 'location'
             },
             {
-                    xtype      : 'textfield',
-                    fieldLabel : 'DateJoined',
-                    name       : 'dateJoined'
+                xtype      : 'datefield',
+                fieldLabel : 'DateJoined',
+                name       : 'dateJoined',
+                format     : 'm/d/y'
             },
             {
-                    xtype      : 'datefield',
-                    fieldLabel : 'Last Visited',
-                    name       : 'lastVisited'
+                xtype      : 'datefield',
+                fieldLabel : 'Last Visited',
+                name       : 'lastVisited',
+                format     : 'm/d/y'
             },
             {
-                    xtype      : 'datefield',
-                    fieldLabel : 'RSVP\'ed',
-                    name       : 'rsvped'
+                xtype         : 'combo',
+                fieldLabel    : 'RSVP\'ed',
+                hiddenName    : 'rsvped',
+                displayField  : 'display',
+                valueField    : 'value',
+                mode          : 'local',
+                triggerAction : 'all',
+                editable      : false,
+                store         : {
+                    xtype    : 'arraystore',
+                    autoLoad : true,
+                    fields   : ['value', 'display'],
+                    data     : [['0', 'No'], ['1', 'Yes']]
+                }
             },
             {
-                    xtype      : 'textfield',
-                    fieldLabel : 'Photo URL',
-                    name       : 'photoUrl'
-            },
-            {
-                    xtype      : 'textfield',
-                    fieldLabel : 'Member URL',
-                    name       : 'memberUrl'
+                fieldLabel : 'Member URL',
+                name       : 'memberUrl'
             }
         ];
         Meetup.form.MemberRegistrationForm.superclass.initComponent.call(this);
-    },
-    onSaveBtn : function() {
-
-    },
-    onCancelBtn : function() {
-
-    },
-    onResetBtn : function() {
-            
     }
-
-
 });
 
-Ext.reg('memberRegistrationForm', Meetup.form.MemberRegistrationForm);
+Ext.reg('memberRegForm', Meetup.form.MemberRegistrationForm);

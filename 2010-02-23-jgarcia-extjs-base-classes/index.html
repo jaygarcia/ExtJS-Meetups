@@ -6,8 +6,13 @@
 <link rel="stylesheet" type="text/css" href="/ext3/resources/css/ext-all.css" />
 <script type="text/javascript" src="/ext3/adapter/ext/ext-base.js"></script>
 <script type="text/javascript" src="/ext3/ext-all-debug.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/xtheme-meetup.css" />
+
     <script type="text/javascript" src="Meetup/form/RegistrationFormBaseCls.js"></script>
     <script type="text/javascript" src="Meetup/form/MemberRegistrationForm.js"></script>
+    <script type="text/javascript" src="Meetup/registration/MemberRegistrationEditor.js"></script>
 
 
 </head>
@@ -15,16 +20,18 @@
 
 <script type="text/javascript">
 Ext.onReady(function() {
-    new Ext.Window({
-        height : 300,
-        width  : 300,
-        layout : 'fit',
-        border : false,
+    new Ext.Panel({
+        frame    : true,
+        renderTo : Ext.getBody(),
+        height   : 400,
+        width    : 725,
+        layout   : 'fit',
+        border   : false,
+        title    : 'Member registration editor',
         items  : {
-            xtype : 'memberRegistrationForm'
-
+            xtype : 'memberRegEditor'
         }
-    }).show()
+    });
 
 });
 

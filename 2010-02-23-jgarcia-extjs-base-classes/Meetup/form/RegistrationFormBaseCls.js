@@ -6,31 +6,31 @@ Ext.ns('Meetup.form');
  * This is an abstract or base class to construct common form panels
  */
 Meetup.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
-    frame         : true,
-    layout        : 'form',
     buttonAlign   : 'left',
     labelWidth    : 50,
-   
     initComponent : function() {
 
         Ext.apply(this, {
-            items   : this.buildBaseItems().concat(this.items || []),      
-            buttons : this.buildButtons()
+            defaultType : 'textfield',
+            items       : this.buildBaseItems().concat(this.items || []),
+            buttons     : this.buildButtons()
         });
+
         Meetup.form.RegistrationFormBaseCls.superclass.initComponent.call(this);
+        this.addEvents({
+            save   : true
+        });
     },
     
     buildBaseItems : function() {
         return [
             {
-                xtype      : 'textfield',
-                name       : 'first',
+                name       : 'firstName',
                 anchor     : '-10',
                 fieldLabel : 'First Name'
             },
             {
-                xtype      : 'textfield',
-                name       : 'last',
+                name       : 'lastName',
                 anchor     : '-10',
                 fieldLabel : 'Last Name'
             }
@@ -53,7 +53,7 @@ Meetup.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
         ]
     },
     onSaveBtn : function() {
-
+        this.fireEvent('save', this, this.getForm().getValues());
     },
     onResetBtn : function() {
         this.getForm().reset();
