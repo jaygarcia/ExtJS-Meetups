@@ -1,0 +1,39 @@
+<h2>Example xtype usage</h2>
+<pre  class="sh_javascript">
+var myTabPanel = {
+		
+    xtype     : 'tabpanel',
+    activeTab : 0,
+    items     : [
+        
+        {
+            title : 'p1',
+            html  : 'Hi, from P1!'
+        },
+        
+        {
+            title : 'p2',
+            html  : 'Hi, from P2!'
+        }    	
+    
+    ]
+
+
+}
+
+new Ext.Window({
+	
+    height : 200,
+    width  : 400,
+    layout : 'fit',
+    items  : myTabPanel
+}).show();
+</pre>
+
+
+
+
+
+<script type="text/javascript">
+	sh_highlightDocument();
+</script>

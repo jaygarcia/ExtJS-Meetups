@@ -1,0 +1,21 @@
+<h2>Example xtype usage</h2>
+<h3>Create a component</h3>
+<pre  class="sh_javascript">
+new Ext.Window({
+    title  : "Rogue Window!",
+    id     : 'myWindow',
+    height : 200,
+    width  : 400,
+    html   : "I am not referenced anywhere but ComponentMgr!"
+}).show();
+</pre>
+<br />
+<h3>Lookup a component</h3>
+<pre  class="sh_javascript">
+Ext.getCmp('myWindow').el.mask('Ha!');
+</pre>
+
+
+<script type="text/javascript">
+	sh_highlightDocument();
+</script>

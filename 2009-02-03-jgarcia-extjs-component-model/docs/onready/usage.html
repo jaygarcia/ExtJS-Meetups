@@ -1,0 +1,38 @@
+<h1>Usage examples</h1>
+<h2>Inline:</h2>
+
+<pre  class="sh_javascript">
+Ext.onReady(function() {
+	
+    Ext.MessageBox.alert('Hello!', 'Welcome to Ext JS!');
+
+});
+</pre>
+
+<br />
+
+<h2>Scoped:</h2>
+
+<pre  class="sh_javascript">
+var mySingleton = function() {
+	
+    var title = 'Hello!';
+    this.msg = "Welcome to Ext JS!",
+    
+    return {
+    	init : function() {
+            Ext.MessageBox.alert(title, this.msg);
+        }
+    }
+}();
+
+Ext.onReady(mySingleton.init, mySingleton);
+</pre>
+
+
+
+
+
+<script type="text/javascript">
+	sh_highlightDocument();
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Baltimore JavaScript User group kick off</title>
+<link rel="stylesheet" type="text/css" href="/ext3/resources/css/ext-all.css" />
+<script type="text/javascript" src="/ext3/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext3/ext-all.js"></script>
+<script type="text/javascript" src="TDGi.iconMgr/TDGi.iconMgr.js"></script>
+<script type="text/javascript" src="treeData.js"></script>
+<script type="text/javascript" src="westTreepanel.js"></script>
+<script type="text/javascript" src="centerShim.js"></script>
+
+
+<script type="text/javascript" src="shjs/sh_main.js"></script>
+<script type="text/javascript" src="shjs/lang/sh_javascript_dom.js"></script>
+<script type="text/javascript" src="shjs/lang/sh_javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="shjs/sh_style.css" />
+
+<link rel="stylesheet" type="text/css" href="shjs/css/sh_vim.min.css" />
+
+</head>
+
+
+<style type="text/css">
+.documents {
+	font-family:"Courier New", Courier, monospace;
+
+}
+h1 {
+	font-size: 40px;
+	font-family:"Courier New", Courier, monospace;
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 30px;
+	font-family:"Courier New", Courier, monospace;
+	margin-bottom: 10px;
+}
+ul.lists {
+	font-size: 30px;
+	list-style-type: inherit;
+	list-style-position: inside;
+	margin-left: 15px;
+
+}
+ul.lists li ul{
+	list-style-type: disc;
+	list-style-position: inside;
+	margin-left: 30px;
+}
+
+
+ul.lists li { font-style: italic; }
+ul.lists ol { font-style: normal; }
+
+</style>
+
+
+<script language="javascript">
+var getIcon = Ext.ux.TDGi.iconMgr.getIcon;
+Ext.BLANK_IMAGE_URL =  '/ext3/resources/images/default/s.gif';
+Ext.onReady(function(){
+	new Ext.Viewport({
+		layout : 'border',
+		items : [
+			new TDGi.westTreePanel(),
+			new TDGi.centerShim()
+		
+		]
+	});
+
+
+});</script>
+
+
+</head>
+<body>
+</body>
+</html>
