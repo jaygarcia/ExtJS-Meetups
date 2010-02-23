@@ -1,6 +1,11 @@
-Ext.ns('MyApp.form');
+Ext.ns('Meetup.form');
 
-MyApp.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
+/**
+ * @class Meetup.form.RegistrationFormBaseCls
+ * @Extends Ext.form.FormPanel
+ * This is an abstract or base class to construct common form panels
+ */
+Meetup.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
     frame         : true,
     layout        : 'form',
     buttonAlign   : 'left',
@@ -12,38 +17,22 @@ MyApp.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
             items   : this.buildBaseItems().concat(this.items || []),      
             buttons : this.buildButtons()
         });
-        MyApp.form.RegistrationFormBaseCls.superclass.initComponent.call(this);
-
+        Meetup.form.RegistrationFormBaseCls.superclass.initComponent.call(this);
     },
     
     buildBaseItems : function() {
         return [
             {
-                xtype         : 'combo',
-                name          : 'title',
-                triggerAction : 'all',
-                editable      : false,
-                anchor        : '-10',
-                fieldLabel    : 'Title',
-                store         : ['Mr.', 'Mrs.', 'Ms.', 'Dr.']
-            },
-            {
                 xtype      : 'textfield',
                 name       : 'first',
                 anchor     : '-10',
-                fieldLabel : 'First'
+                fieldLabel : 'First Name'
             },
             {
                 xtype      : 'textfield',
                 name       : 'last',
                 anchor     : '-10',
-                fieldLabel : 'Last'
-            },
-            {
-                xtype      : 'textfield',
-                name       : 'middle',
-                anchor     : '-10',
-                fieldLabel : 'Middle'
+                fieldLabel : 'Last Name'
             }
         ];
     },
@@ -60,13 +49,7 @@ MyApp.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
                 text    : 'Save',
                 scope   : this,
                 handler : this.onSaveBtn
-            },
-            {
-                text    : 'Cancel',
-                scope   : this,
-                handler : this.onCancelBtn
             }
-
         ]
     },
     onSaveBtn : function() {
@@ -74,12 +57,5 @@ MyApp.form.RegistrationFormBaseCls = Ext.extend(Ext.form.FormPanel, {
     },
     onResetBtn : function() {
         this.getForm().reset();
-    },
-    onCancelBtn : function() {
-
     }
-
-
-
-
 });
